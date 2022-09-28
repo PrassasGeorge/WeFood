@@ -1,0 +1,104 @@
+
+.justifyEnd{
+  justify-content:flex-end;
+}
+.justifySearch{
+ width: 35%;
+ display: flex;
+}
+
+.logoBtn{
+ font-family: 'Fredoka One', cursive;
+ font-size: 2.6rem;
+ align-items:center;
+ display: flex;
+}
+
+li a {
+ font-family: 'Fredoka One', cursive;
+ font-size: 1.2rem;
+ color: rgb(250, 248, 248);
+ font-family: 'Roboto', sans-serif;
+ font-weight: 550;
+
+}
+
+.user {
+border-radius: 50%;
+height: 75px;
+width: 75px;
+margin-left: 15px;
+}
+
+.userimg{
+ border-radius: 45px;
+ display: block;
+ width: 100%;
+
+}
+
+.navbar {
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(215, 25, 25) , rgb(13, 0, 14))
+}
+
+.searchBtn{
+  background-color: rgb(240, 85, 85);
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.searchBar{
+  border-bottom-right-radius: 0px ;
+  border-top-right-radius: 0px;
+}
+
+
+
+
+/*User Button*/
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #d92b2b;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(129, 54, 54, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
