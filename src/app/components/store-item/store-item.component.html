@@ -1,11 +1,18 @@
 <div class="popularHeader">
   <h3>Τα προϊόντα μας:</h3>
 </div>
-<div class="card">
+<div class=" d-lg-block" >
+<div class="row col" *ngIf="products">
+  <div class = "mb-5" *ngFor="let item of products.data.storeItems">
+<div class="card" >
   <img src="../../../assets/images/storeitemImages/steak.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>storeItemName</h1>
+  <h1>{{item.itemName}}</h1>
   <br><br>
-  <p class="price">€19.99</p>
-  <p>Κατηγορία Προϊόντος: store category</p>
-  <p><button>Προσθήκη στο καλάθι</button></p>
+  <p class="price">€{{item.price}}</p>
+ <!-- <p>Κατηγορία Προϊόντος: {{item.}}</p>-->
+  <p><button (click)="addToCart(item)" >Προσθήκη στο καλάθι</button></p>
 </div>
+</div>
+</div>
+</div>
+
