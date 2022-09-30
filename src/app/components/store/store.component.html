@@ -6,8 +6,8 @@
     <br>
     <div class="row" >
       <div class="homepage-fixed-offer col-3" *ngFor="let store of stores.data">
-        <div class="mb-5" >
-          <a href="" (click)="productsByStore(store.id)"   routerLink="" class="hover-no-decoration" style="color: #FF0000;">
+        <div class="mb-5"  >
+          <a href="" (click)="productsByStore(store.id); getStoreId(store.id) "  [routerLink]="['/Store-item/'+store.id+'/products']" class="hover-no-decoration" style="color: #FF0000;">
             <img src="../../../assets/images/storeImages/McDonalds logo.png" alt="Σουβλάκι"/>
           </a>
         </div>
