@@ -12,10 +12,11 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreItemComponent } from './components/store-item/store-item.component';
 import { UserComponent } from './components/user/user.component';
-import { OrderComponent } from './components/order/order.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { PopularStoresComponent } from './components/popular-stores/popular-stores.component';
+import {StoreService} from "../services/store.service";
+import {CartService} from "../services/cart.service";
 
 
 @NgModule({
@@ -30,7 +31,6 @@ import { PopularStoresComponent } from './components/popular-stores/popular-stor
     HomeComponent,
     StoreItemComponent,
     UserComponent,
-    OrderComponent,
     RegisterComponent,
     LogInComponent,
     PopularStoresComponent
@@ -40,7 +40,7 @@ import { PopularStoresComponent } from './components/popular-stores/popular-stor
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [StoreService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
