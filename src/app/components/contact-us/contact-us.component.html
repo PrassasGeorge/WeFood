@@ -1,0 +1,48 @@
+<div class="about">
+  <div class="split left-outline" style="background-color: rgb(28, 5, 10)">
+    <div class="centeredLeft">
+      <img
+        src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="food image" style="border-radius: 25px;"
+      />
+    </div>
+  </div>
+  <div class="split right">
+    <div class="centeredRight">
+      <div class="container" style="align-items: center">
+        <form action="contact-form" class="contactForm">
+          <div class="contacthead">
+            <h1 style=" margin-top: 1rem; text-decoration: underline; margin-top: 2rem; margin-bottom: 2rem;">Επικοινωνία</h1>
+            <br>
+            <p style="font-size: large">
+              Έμεινες χαρούμενος ή κάτι πήγε λάθος; Μίλησέ μας!
+            </p>
+            <p style="font-size: large">
+              Τηλέφωνο wefood:
+              <span style="font-weight: bolder; font-size: larger; text-decoration: underline;">  2113110666</span>
+            </p>
+            <br/><br/>
+          </div>
+          <div class="inside">
+            <label for="labelForFirstName" style="text-align: center;"></label>
+            <input type="text" name="firstName" placeholder="Όνομα"/>
+            <br>
+            <label for="labelForLastName" style="text-align: center;"></label>
+            <input type="text" name="lastName" placeholder="Επώνυμο"/>
+            <br>
+            <label for="labelForEmail" style="text-align: center;"></label>
+            <input type="email" placeholder="Email"/>
+            <br>
+            <label for="labelForPhoneNumber" style="text-align: center;"></label>
+            <input type="phone" name="number" placeholder="Τηλέφωνο"/>
+            <br/>
+            <label for="labelForTextArea" style="text-align: center;"></label>
+            <textarea name="textarea" id="textarea"  rows="4" cols="20" placeholder="Γράψε τα σχόλιά σου εδω:"></textarea>
+            <br/>
+            <input (click)="contactUs()" class="btn btn-primary" style="background-color:rgb(34, 29, 29)" type="submit" name="submit" value="Αποστολή"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
