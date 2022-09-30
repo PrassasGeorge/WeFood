@@ -1,0 +1,57 @@
+<section class="homepage container" style="text-align: center; ">
+  <div class="d-none d-lg-block"  >
+    <br>
+    <h3 class="h2 mt-0 mb-4" style="text-decoration: underline;">Διάλεξε Κατάστημα: </h3>
+    <br>
+    <br>
+    <div class="row" >
+      <div class="homepage-fixed-offer col-3" *ngFor="let store of stores.data">
+        <div class="mb-5" >
+          <a href="" (click)="productsByStore(store.id)"   routerLink="" class="hover-no-decoration" style="color: #FF0000;">
+            <img src="../../../assets/images/storeImages/McDonalds logo.png" alt="Σουβλάκι"/>
+          </a>
+        </div>
+        <a href="" class="hover-no-decoration" style="text-decoration:none">
+          <div class="d-flex justify-content-center" >
+            <h3 class="pr-5" style="text-decoration: none;" >{{store.storeName}}</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="homepage container" style="text-align: center; ">
+  <div class="d-none d-lg-block"  >
+    <h3 class="h2 mt-5 mb-4" style="text-decoration:underline;">Διάλεξε από τις κατηγορίες Καταστημάτων: </h3>
+    <br>
+    <br>
+    <div class="row" >
+      <div class="homepage-fixed-offer col-3"  *ngFor="let store of stores.data" >
+        <div class="mb-5" >
+          <a href=""  class="hover-no-decoration">
+            <img src="https://www.e-food.gr/cdn-cgi/image/w=268,h=168,fit=cover,q=100,f=auto/site-assets/img/welcome/offers/thebigbadwolf.jpg" alt="Σουβλάκι"/>
+          </a>
+        </div>
+        <a href="" class="hover-no-decoration">
+          <div class="d-flex justify-content-center" style="margin-bottom: 35px;">
+            <h3 class="pr-5">{{store.category.name}}</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <button >
+    {{storesById.data | json}}
+  </button> -->
+
+  <!-- {{pByS.data.storeItems | json}} -->
+
+
+
+
+
+
+
