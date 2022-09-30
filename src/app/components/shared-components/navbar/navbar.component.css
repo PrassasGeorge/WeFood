@@ -68,7 +68,15 @@ margin-left: 15px;
   padding: 5px;
   font-size: 16px;
   border: none;
+
 }
+
+.dropbtn:hover {
+  opacity: 0.7;
+}
+
+
+
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
