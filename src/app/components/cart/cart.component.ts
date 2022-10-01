@@ -64,7 +64,7 @@ export class CartComponent implements OnInit {
       {
         next:(response:any) => {
           this.finalOrder = response;
-
+          alert("Η Παραγγελία σου ολοκληρώθηκε! Στην πόρτα σου σε 25 λεπτά ...");
 
         },
         error:(error:any)=> console.log(error),
@@ -72,7 +72,9 @@ export class CartComponent implements OnInit {
           console.log("Order Created");
 
         }
+
       }
+
     )
   }
 

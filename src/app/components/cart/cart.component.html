@@ -121,13 +121,14 @@
                   </strong>
                 </div>
                 <span><strong>€{{order.data.cost}}</strong></span>
-              </li>
-            </ul>
 
+              </li>
               <select #option>
                 <option  value="CARD">CARD PAYMENT</option>
                 <option  value="CASH">CASH PAYMENT</option>
               </select>
+            </ul>
+
 
             <button (click)="checkout(option.value); clearCart()" type="button" class="btn btn-primary btn-lg btn-block">
               Παραγγελία
