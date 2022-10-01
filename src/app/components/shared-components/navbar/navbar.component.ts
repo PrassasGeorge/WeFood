@@ -16,16 +16,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.searchStoresByCategory();
   }
-  
 
-
-//   searchStoreHandler(searchString:string){
-//     this.storeService.search(searchString).subscribe({
-//         next: (response: any) => this.stores = response,
-//         error: (error: any) => console.log(error),
-//         complete: () => console.log("petuxe")
-//   })
-// }
 searchStoresByCategory(){
   this.storeService.getStoreCategories().subscribe({
     next: (response: any) => this.stores = response,
@@ -34,4 +25,12 @@ searchStoresByCategory(){
 })
 }
 
+// searchStoresByCategory(){
+//   this.storeService.getStoreCategories().subscribe({
+//     next: (response: any) => this.stores = response,
+//     error: (error: any) => console.log(error),
+//     complete: () => console.log("petuxe")
+// })
 }
+
+

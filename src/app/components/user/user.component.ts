@@ -23,4 +23,8 @@ export class UserComponent implements OnInit {
       }
     )
   }
+
+  logUserOut(){
+    this.accountService.logout();
+  }
 }

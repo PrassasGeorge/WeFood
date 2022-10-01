@@ -68,8 +68,8 @@ export class StoreComponent implements OnInit {
     );
   }
 
-  getPopularStores(){
+  // getPopularStores(){
 
-  }
+  // }
 
 }

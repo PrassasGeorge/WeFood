@@ -1,3 +1,4 @@
+import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
 import { StoreItemComponent } from './components/store-item/store-item.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:'Log-in' , component:LogInComponent},
   {path:'Store-item' , component:StoreItemComponent},
   {path:'app-popular-products' , component:PopularProductsComponent},
-  {path:'Store-item/:id/products' , component:StoreItemComponent}
+  {path:'Store-item/:id/products' , component:StoreItemComponent},
+  {path:'StoresByCategory/:id', component:StoresByCategoryComponent}
 ];
 
 @NgModule({

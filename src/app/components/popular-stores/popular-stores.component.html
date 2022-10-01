@@ -7,7 +7,7 @@
     <div class="row" >
       <div class="col-3" *ngFor="let store of popularStores.data">
         <div class="mb-5" >
-          <a href=""   routerLink="" class="hover-no-decoration">
+          <a href=""   (click)="productsByStore(store.key); getStoreId(store.key) "  [routerLink]="['/Store-item/'+store.key+'/products']" class="hover-no-decoration">
             <img src="../../../assets/images/storeImages/McDonalds logo.png" alt="Σουβλάκι"/>
           </a>
         </div>

@@ -19,6 +19,7 @@ import { PopularProductsComponent } from './components/popular-products/popular-
 import { PopularStoresByCategoryComponent } from './components/popular-stores-by-category/popular-stores-by-category.component';
 import { StoreService } from 'src/services/store.service';
 import { CartService } from 'src/services/cart.service';
+import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { CartService } from 'src/services/cart.service';
     LogInComponent,
     PopularStoresComponent,
     PopularProductsComponent,
-    PopularStoresByCategoryComponent
+    PopularStoresByCategoryComponent,
+    StoresByCategoryComponent
   ],
   imports: [
     BrowserModule,

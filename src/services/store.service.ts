@@ -83,5 +83,15 @@ export class StoreService {
   // }
 
 
+   //Get stores by id
+   getStoresByCategory(id:number){
+
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("id", id);
+
+
+    return this.http.get(this.URL +"/categories/", {params:queryParams});
+  }
+
  }
 
