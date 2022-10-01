@@ -15,13 +15,10 @@ import { UserComponent } from './components/user/user.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { PopularStoresComponent } from './components/popular-stores/popular-stores.component';
-<<<<<<< HEAD
 import { PopularProductsComponent } from './components/popular-products/popular-products.component';
 import { PopularStoresByCategoryComponent } from './components/popular-stores-by-category/popular-stores-by-category.component';
-=======
-import {StoreService} from "../services/store.service";
-import {CartService} from "../services/cart.service";
->>>>>>> 7366826c6ae34a4b24ab9266bdce8e1c5ea3e4fc
+import { StoreService } from 'src/services/store.service';
+import { CartService } from 'src/services/cart.service';
 
 
 @NgModule({

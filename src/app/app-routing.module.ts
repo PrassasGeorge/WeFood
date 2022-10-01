@@ -16,13 +16,9 @@ const routes: Routes = [
   {path:'User' , component:UserComponent},
   {path:'Register' , component:RegisterComponent},
   {path:'Log-in' , component:LogInComponent},
-<<<<<<< HEAD
   {path:'Store-item' , component:StoreItemComponent},
-  {path:'app-popular-products' , component:PopularProductsComponent}
-=======
+  {path:'app-popular-products' , component:PopularProductsComponent},
   {path:'Store-item/:id/products' , component:StoreItemComponent}
-
->>>>>>> 7366826c6ae34a4b24ab9266bdce8e1c5ea3e4fc
 ];
 
 @NgModule({
