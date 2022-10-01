@@ -1,5 +1,8 @@
 import { StoreService } from 'src/services/store.service';
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {CartService} from "../../../services/cart.service";
+
 
 @Component({
   selector: 'app-store-item',
@@ -8,14 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreItemComponent implements OnInit {
 
-  constructor(private storeS:StoreService) { }
+  constructor(private storeS:StoreService,private route:ActivatedRoute,private cartS:CartService) { }
 
   storesById:any;
   products:any;
+  id!:number;
+  newOrder:any;
 
   ngOnInit(): void {
+    this.route.params.subscribe({
+      next : par => this.id = par['id']
+    });
+
+    this.productsByStore(this.id);
   }
-  
+
   getStoreById(id:number){
     this.storeS.getStore(id).subscribe({
       next: (response: any) => this.storesById = response,
@@ -30,6 +40,22 @@ export class StoreItemComponent implements OnInit {
         error: (error: any) => console.log(error),
         complete: () => console.log("petuxe")
     })
+  }
+
+  addToCart(item:any){
+
+    this.cartS.addItem(item.id,1).subscribe(
+      {
+
+        next:(response: any) => {
+          this.newOrder = response;
+          localStorage.setItem('newOrder', JSON.stringify(this.newOrder));
+        },
+        error: (error: any) => console.error(error),
+        complete: () => console.log(this.newOrder)
+
+      }
+    );
   }
 
 

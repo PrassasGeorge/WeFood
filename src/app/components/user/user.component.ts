@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AccountService} from "../../../services/account.service";
 
 @Component({
   selector: 'app-user',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accountService:AccountService) { }
 
   ngOnInit(): void {
   }
+  orders:any;
 
+  getOrders(){
+    this.accountService.getOrders().subscribe(
+      {
+        next: (response: any) => this.orders = response,
+        error: (error:any) => console.log(error),
+        complete:() => console.log('Orders fetched')
+      }
+    )
+  }
 }

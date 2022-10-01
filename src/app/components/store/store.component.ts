@@ -1,7 +1,7 @@
-import { OrderService } from './../../../services/order.service';
 import { StoreService } from 'src/services/store.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import {CartService} from "../../../services/cart.service";
 
 @Component({
   selector: 'app-store',
@@ -14,14 +14,13 @@ export class StoreComponent implements OnInit {
   storesById:any;
   account:any;
   store:any;
-  order:any;
+  newOrder:any;
   pByS:any;
 
-  constructor(private storeService:StoreService ) { }
+  constructor(private storeService:StoreService,private cartS:CartService) { }
 
   ngOnInit(): void {
     this.getAllStores()
-   //this.InitiateOrder();
 
   }
 
@@ -50,17 +49,27 @@ export class StoreComponent implements OnInit {
   //   })
   // }
 
-  // InitiateOrder(){
-  //   this.storeService.Initiate(this.account , this.store).subscribe({
-  //       next: (response: any) => this.order = response,
-  //       error: (error: any) => console.log(error),
-  //       complete: () => console.log("petuxe")
-  //   })
-  // }
+  getStoreId(storeId:any){
+    let acc=JSON.parse(localStorage.getItem('auth')||'{}');
+    let account= acc.data.id;
+    this.initiateOrder(storeId, account) ;
+  }
 
+  initiateOrder(store: any, account: any) {
+    this.cartS.initiateOrder(store, account).subscribe(
+      {
+        next:(response: any) => {
+          this.newOrder = response;
+          localStorage.setItem('newOrder', JSON.stringify(this.newOrder));
+        },
+        error: (error: any) => console.log(error),
+        complete: () => console.log(this.newOrder)
+      }
+    );
+  }
 
   getPopularStores(){
-    
+
   }
 
 }

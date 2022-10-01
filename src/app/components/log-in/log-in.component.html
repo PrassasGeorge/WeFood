@@ -8,14 +8,14 @@
   <br>
   <br>
   <form action="contact-form" >
-    <label for="email"></label>
-    <input type="text" id="email" style="margin-left:12px;" placeholder="Email" style="text-align: center; color: rgb(103, 106, 106);" required>
+    <label  for="email"></label>
+    <input #username type="text" id="email" style="margin-left:12px;" placeholder="Email" style="text-align: center; color: rgb(103, 106, 106);" required>
 <br>
     <label for="password"></label>
-    <input type="password" id="password" placeholder=" Κωδικός Πρόσβασης" style="text-align: center; color: rgb(103, 106, 106);" required>
+    <input #password type="password" id="password" placeholder=" Κωδικός Πρόσβασης" style="text-align: center; color: rgb(103, 106, 106);" required>
   </form>
   <div class="card">
-    <input class="btn btn-primary" type="submit" name="submit" value="Σύνδεση" >
+    <input class="btn btn-primary" type="submit" name="submit" (click)="login(username.value,password.value)" [routerLink]="['/']" value="Σύνδεση" >
   </div>
 </div>
 
