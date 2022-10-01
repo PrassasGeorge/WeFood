@@ -8,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularStoresComponent implements OnInit {
 
-  constructor(private StoreService:StoreService) { }
+  popularStores:any;
+
+  constructor(private storeService:StoreService) { }
 
   ngOnInit(): void {
+    this.getMostPopularStores()
+  }
+
+
+  // get most popular stores in general
+
+  getMostPopularStores(){
+    this.storeService.mostPopularStoresInGeneral().subscribe({
+      next: (response: any) => this.popularStores = response,
+      error: (error: any) => console.log(error),
+      complete: () => console.log("petuxe")
+    })
   }
 
 }

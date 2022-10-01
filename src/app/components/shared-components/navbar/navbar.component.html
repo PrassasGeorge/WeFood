@@ -11,11 +11,9 @@
         <button class="btn btn-outline-danger my-2 my-sm-0 searchBtn" type="submit" > 🔎</button>
     </form>
 <div class="dropdown">
-  <label for="labelForstoreCategory" style="color: white; font-size: 1.3rem; margin-right: 15px;">Κατάστημα ανά κατηγορία </label>
-  <select name="selectStoreCategory" *ngFor="let store of stores.data">
-    <option value="storeName">{{store.name}}</option>
-    <option value="storeName">koukou</option>
-    <option value="storeName">roukou</option>
+  <label for="labelForstoreCategory" style="color: white; font-size: 1.3rem; margin-right: 15px; ">Κατάστημα ανά κατηγορία </label>
+  <select name="selectStoreCategory" >
+    <option [value]="store" *ngFor="let store of stores.data">{{store}}</option>
   </select>
 </div>
 

@@ -7,6 +7,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PopularProductsComponent } from './components/popular-products/popular-products.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'User' , component:UserComponent},
   {path:'Register' , component:RegisterComponent},
   {path:'Log-in' , component:LogInComponent},
-  {path:'Store-item' , component:StoreItemComponent}
+  {path:'Store-item' , component:StoreItemComponent},
+  {path:'app-popular-products' , component:PopularProductsComponent}
 ];
 
 @NgModule({

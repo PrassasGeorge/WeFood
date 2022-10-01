@@ -1,19 +1,19 @@
 <section class="homepage container" style="text-align: center; ">
   <div class="d-none d-lg-block"  >
     <br>
-    <h3 class="h2 mt-0 mb-4" style="text-decoration: underline;">Διάλεξε Κατάστημα: </h3>
+    <h3 class="h2 mt-0 mb-4" style="text-decoration: underline;"> Τα Δημοφιλέστερα καταστήματα ανα κατηγορία: </h3>
     <br>
     <br>
     <div class="row" >
-      <div class="homepage-fixed-offer col-3" *ngFor="let store of stores.data">
+      <div class="col-3">
         <div class="mb-5" >
-          <a href="" (click)="productsByStore(store.id)"   routerLink="" class="hover-no-decoration" style="color: #FF0000;">
+          <a href=""   routerLink="" class="hover-no-decoration">
             <img src="../../../assets/images/storeImages/McDonalds logo.png" alt="Σουβλάκι"/>
           </a>
         </div>
         <a href="" class="hover-no-decoration" style="text-decoration:none">
           <div class="d-flex justify-content-center" >
-            <h3 class="pr-5" style="text-decoration: none;" >{{store.storeName}}</h3>
+            <h3 class="pr-5" style="text-decoration: none;" >store name</h3>
           </div>
         </a>
       </div>
@@ -22,17 +22,5 @@
 </section>
 
 
-
-
-  <!-- <button >
-    {{storesById.data | json}}
-  </button> -->
-
-  <!-- {{pByS.data.storeItems | json}} -->
-
-
-
-
-
-
+<!-- *ngFor="let store of popularStores.data" -->
 

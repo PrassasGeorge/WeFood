@@ -16,6 +16,8 @@ import { OrderComponent } from './components/order/order.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { PopularStoresComponent } from './components/popular-stores/popular-stores.component';
+import { PopularProductsComponent } from './components/popular-products/popular-products.component';
+import { PopularStoresByCategoryComponent } from './components/popular-stores-by-category/popular-stores-by-category.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { PopularStoresComponent } from './components/popular-stores/popular-stor
     OrderComponent,
     RegisterComponent,
     LogInComponent,
-    PopularStoresComponent
+    PopularStoresComponent,
+    PopularProductsComponent,
+    PopularStoresByCategoryComponent
   ],
   imports: [
     BrowserModule,

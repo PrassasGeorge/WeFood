@@ -9,12 +9,14 @@ import { StoreService } from 'src/services/store.service';
 })
 export class NavbarComponent implements OnInit {
 
-  stores:any;
+  stores:any=[];
   constructor( private storeService:StoreService) { }
 
 
   ngOnInit(): void {
+    this.searchStoresByCategory();
   }
+  
 
 
 //   searchStoreHandler(searchString:string){

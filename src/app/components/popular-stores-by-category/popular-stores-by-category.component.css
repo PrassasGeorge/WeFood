@@ -1,0 +1,12 @@
+img{
+  border-radius:12px;
+  height: 168px;
+  width: 268px;
+}
+
+h3{
+  color: black;
+  text-decoration: none;
+  font-family: 'Greek', sans-serif;
+  margin-bottom: 2rem;
+}
