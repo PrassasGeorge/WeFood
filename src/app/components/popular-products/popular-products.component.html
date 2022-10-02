@@ -1,13 +1,18 @@
 <div class="popularHeader">
   <h3>Τα 10 κορυφαία προϊόντα που επιλέγουν οι χρήστες μας:</h3>
 </div>
-<div class="card" *ngFor="let product of popularProducts.data">
-  <div class="stores">
-    <img src="../../../assets/images/storeitemImages/steak.jpg" alt="steak image" style="width: 100%" />
-
+<div style="justify-content: center; align-items: center;">
+  <div class="card" *ngFor="let product of popularProducts.data">
+    <div class="stores">
+      <img
+        src="../../../assets/images/storeitemImages/steak.jpg"
+        alt="steak image"
+        style="width: 100%"
+      />
+    </div>
+    <div>{{ product.value }}</div>
+    <br /><br />
   </div>
-  <h3>{{ product.value }}</h3>
-  <br /><br />
 </div>
 
 <!-- {{ popularProducts.data|json}} -->

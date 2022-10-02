@@ -10,7 +10,10 @@
   margin-right: 15px;
   display: inline-block;
   flex-direction: row;
-
+  height: 520px;
+  background-color: #e06868;
+  color: white;
+  font-size: 20px;
 }
 
 .price {
@@ -27,7 +30,7 @@
   text-align: center;
   cursor: pointer;
   width: 100%;
-  font-size: 18px;
+  font-size: 2px;
 }
 
 .card button:hover {

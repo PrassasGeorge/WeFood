@@ -3,3 +3,7 @@ img{
   height: 168px;
   width: 268px;
 }
+
+.row{
+  justify-content: center;
+}

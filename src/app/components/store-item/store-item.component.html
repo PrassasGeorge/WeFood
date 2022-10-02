@@ -5,11 +5,11 @@
 <div class="card-group" *ngIf="products">
   <div class = "mb-5" *ngFor="let item of products.data.storeItems">
 <div class="card m-2 col-12" >
-  <img  src="../../../assets/images/storeitemImages/steak.jpg"  alt="Denim Jeans" style="width:100%">
+  <img  src="../../../assets/images/storeitemImages/burger.jpg"  alt="Denim Jeans" style="width:100%">
   <div class="card-body">
-  <h3 class="card-text">{{item.itemName}}</h3>
-    <br>
-  <p class="price">€{{item.price}}</p>
+  <p class="card-text">{{item.itemName}}</p>
+
+  <p class="price" style="color: white;">€{{item.price}}</p>
   </div>
  <div class="card-footer">
   <p><button (click)="addToCart(item)" >Προσθήκη στο καλάθι</button></p>

@@ -7,7 +7,12 @@
   border-bottom-left-radius:  12px;
   border-bottom-right-radius:  12px;
   margin-bottom: 2rem;
-  display: flex;
+  display: inline-block;
+  flex-direction: row;
+  height: 520px;
+  background-color: #e06868;
+  color: white;
+  font-size: 18px;
 }
 
 .card-group{

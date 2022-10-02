@@ -20,17 +20,14 @@ export class LogInComponent implements OnInit {
 
 
   login(username: string, password: string){
-    this.authService.login(username, password).subscribe(
-      {
+    this.authService.login(username, password).subscribe({
         next: (response: any) => {
           this.auth=response;
           localStorage.setItem('auth', JSON.stringify(this.auth));
         },
         error: (error: any) => console.log(error),
         complete: () => console.log("Usern Authenticated")
-
-      }
-    )
+      })
   }
 
   logout(){

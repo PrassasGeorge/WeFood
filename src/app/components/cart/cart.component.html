@@ -13,7 +13,7 @@
               <div class="col-lg-3 col-md-12 mb-4 mb-lg-0"  >
                 <!-- Image -->
                 <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                  <img src="https://www.thanopoulos.gr/869171/coca-cola-anapsuktiko-1lt.jpg"
+                  <img src="../../../assets/images/pizza.jpg"
                     class="w-100" alt="Blue Jeans Jacket" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
@@ -33,18 +33,16 @@
               <div class="col-lg-4 col-md-6 mb-4 mb-lg-0" >
                 <!-- Quantity -->
                 <div class="d-flex mb-4" style="max-width: 300px ; height: 38px;">
-                  <button class="btn btn-primary px-3 me-2" (click)="updateItem(oi.storeItem.id,-1)"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                  <button class="btn btn-primary px-3 me-2" (click)="updateItem(oi.storeItem.id,-1)">
                     <i class="fa fa-minus"></i>
                   </button>
 
                   <div class="form-outline" style="text-align: center;">
-                    <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" style="text-align: center;"/>
+                    <input id="form1" min="0" name="quantity" value="{{oi.quantity}}" type="number" class="form-control" style="text-align: center;"/>
                     <label class="form-label" for="form1">Ποσότητα</label>
                   </div>
 
-                  <button class="btn btn-primary px-3 ms-2" (click)="updateItem(oi.storeItem.id,1)"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                  <button class="btn btn-primary px-3 ms-2" (click)="updateItem(oi.storeItem.id,1)">
                     <em class="fa fa-plus"></em>
                   </button>
                 </div>
@@ -129,7 +127,6 @@
               </select>
             </ul>
 
-
             <button (click)="checkout(option.value); clearCart()" type="button" class="btn btn-primary btn-lg btn-block">
               Παραγγελία
             </button>
@@ -150,16 +147,11 @@
 </section>
 
 <section *ngIf="finalOrder">
-
   <div *ngFor=" let oi of finalOrder.data.orderItems">
     {{oi.storeItem.itemName|json}}
     {{oi.quantity |json}}
   </div>
-  </section>
-
-
-
-<!--<button type="button" class="btn btn-primary" (click)="deleteItem(oi.storeItem.id)" >X</button>-->
+</section>
 
 
 

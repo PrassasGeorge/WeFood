@@ -44,15 +44,6 @@ export class StoreService {
     return this.http.get(this.URL + "/categories/" + id);
   }
 
-// //search by store category
-//   search(searchString:string){
-
-//     let queryParams = new HttpParams();
-//     queryParams = queryParams.append("searchString", searchString);
-
-//     return this.http.get(this.URL + "/search", {params:queryParams});
-//   }
-
   //Initiate new order
   Initiate(store: any, account: any) {
     let queryParams = new HttpParams();
@@ -66,7 +57,6 @@ export class StoreService {
     return this.http.get(this.URL + "/popular")
   }
 
-
   mostPopularProducts() {
     return this.http.get(this.URL + "/popular/products")
   }
@@ -75,16 +65,8 @@ export class StoreService {
     return this.http.get(this.URL + "/popular")
   }
 
-  // mostPopularStoresPerCategory(){
-  // let queryParams= new HttpParams();
-  // queryParams = queryParams.set("category", category)
-  // return this.http.get(this.URL + "/")
-  // }
-
-
   PopularStoresByCategory(id: number) {
     return this.http.get(this.URL + "/popular/categories/" + id);
 
   }
-
 }

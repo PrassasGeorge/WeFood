@@ -1,7 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from 'src/services/store.service';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
