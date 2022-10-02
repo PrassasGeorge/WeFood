@@ -45,14 +45,14 @@
 
                   <button class="btn btn-primary px-3 ms-2" (click)="updateItem(oi.storeItem.id,1)"
                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i class="fa fa-plus"></i>
+                    <em class="fa fa-plus"></em>
                   </button>
                 </div>
                 <!-- Quantity -->
 
                 <!-- Price -->
                 <p class="text-start text-md-center">
-                  <strong>€2.50</strong>
+                  <strong>€{{oi.storeItem.price}}</strong>
                 </p>
                 <!-- Price -->
               </div>
@@ -123,7 +123,7 @@
                 <span><strong>€{{order.data.cost}}</strong></span>
 
               </li>
-              <select #option>
+              <select #option class="form-select mb-4 ">
                 <option  value="CARD">CARD PAYMENT</option>
                 <option  value="CASH">CASH PAYMENT</option>
               </select>

@@ -10,40 +10,39 @@ export class StoreService {
 
   private URL = environment.baseUrl + "/stores";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   //Get all stores
-  getStores(){
+  getStores() {
     return this.http.get(this.URL)
   }
 
   //Get stores by id
-  getStore(id:number){
+  getStore(id: number) {
 
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id", id);
 
-    return this.http.get(this.URL, {params:queryParams});
+    return this.http.get(this.URL, {params: queryParams});
   }
 
   //Get Products By store id
-  getProductsByStore(id:number){
+  getProductsByStore(id: number) {
     console.log(id);
     return this.http.get(`${this.URL}/${id}/products`);
   }
 
   //Get all store categories
-  getStoreCategories(){
+  getStoreCategories() {
     return this.http.get(this.URL + "/storeCategories");
   }
 
-//   //Get stores by category
-//   getStoresByCategory(storeCategories:any){
-//     let queryParams = new HttpParams();
-//     queryParams = queryParams.append("storeCategories", storeCategories);
+  //Get stores by category
+  getStoresByCategory(id: number) {
 
-//     return this.http.get(this.URL + "/storeCategories", {params:queryParams});
-//   }
+    return this.http.get(this.URL + "/categories/" + id);
+  }
 
 // //search by store category
 //   search(searchString:string){
@@ -55,24 +54,24 @@ export class StoreService {
 //   }
 
   //Initiate new order
-  Initiate(store:any,account:any){
+  Initiate(store: any, account: any) {
     let queryParams = new HttpParams();
     queryParams = queryParams.set("store", store)
-                             .set("account" , account=1)
+      .set("account", account = 1)
 
-    return this.http.get(this.URL + "/initiate", {params:queryParams});
+    return this.http.get(this.URL + "/initiate", {params: queryParams});
   }
 
-  getPopularStores(){
+  getPopularStores() {
     return this.http.get(this.URL + "/popular")
   }
 
 
-  mostPopularProducts(){
+  mostPopularProducts() {
     return this.http.get(this.URL + "/popular/products")
   }
 
-  mostPopularStoresInGeneral(){
+  mostPopularStoresInGeneral() {
     return this.http.get(this.URL + "/popular")
   }
 
@@ -83,15 +82,9 @@ export class StoreService {
   // }
 
 
-   //Get stores by id
-   getStoresByCategory(id:number){
+  PopularStoresByCategory(id: number) {
+    return this.http.get(this.URL + "/popular/categories/" + id);
 
-    let queryParams = new HttpParams();
-    queryParams = queryParams.append("id", id);
-
-
-    return this.http.get(this.URL +"/categories/", {params:queryParams});
   }
 
- }
-
+}

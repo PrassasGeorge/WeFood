@@ -2,15 +2,18 @@
   <h3>Τα προϊόντα μας:</h3>
 </div>
 <div class=" d-lg-block" >
-<div class="row col" *ngIf="products">
+<div class="card-group" *ngIf="products">
   <div class = "mb-5" *ngFor="let item of products.data.storeItems">
-<div class="card" >
-  <img src="../../../assets/images/storeitemImages/steak.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>{{item.itemName}}</h1>
-  <br><br>
+<div class="card m-2 col-12" >
+  <img  src="../../../assets/images/storeitemImages/steak.jpg"  alt="Denim Jeans" style="width:100%">
+  <div class="card-body">
+  <h3 class="card-text">{{item.itemName}}</h3>
+    <br>
   <p class="price">€{{item.price}}</p>
- <!-- <p>Κατηγορία Προϊόντος: {{item.}}</p>-->
+  </div>
+ <div class="card-footer">
   <p><button (click)="addToCart(item)" >Προσθήκη στο καλάθι</button></p>
+ </div>
 </div>
 </div>
 </div>
