@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AccountService} from "../../../services/account.service";
+import {LoginModel} from "../models/LoginModel";
 
 
 @Component({
@@ -9,11 +10,27 @@ import {AccountService} from "../../../services/account.service";
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private authService:AccountService) { }
+  loginModel:LoginModel=new LoginModel();
+
+  constructor(private accountService:AccountService) { }
 
   ngOnInit(): void {
   }
 
+
+  userLogin(){
+    console.log(this.loginModel);
+    this.accountService.loginUser(this.loginModel).subscribe(
+      {
+        next: (response: any) => this.loginModel = response,
+        error: (error: any) => console.log(error),
+        complete: () => console.log("logged user")
+      }
+    )
+  }
+
+
+/*
   auth:any;
   username: any;
   password: any;
@@ -36,4 +53,5 @@ export class LogInComponent implements OnInit {
   logout(){
     this.auth.logout();
   }
+ */
 }
