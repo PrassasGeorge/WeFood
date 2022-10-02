@@ -20,7 +20,7 @@ import { PopularStoresByCategoryComponent } from './components/popular-stores-by
 import { StoreService } from 'src/services/store.service';
 import { CartService } from 'src/services/cart.service';
 import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import { StoresByCategoryComponent } from './components/stores-by-category/store
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [StoreService,CartService],
   bootstrap: [AppComponent]
