@@ -1,7 +1,7 @@
-import { PopularStoresByCategoryComponent } from './../popular-stores-by-category/popular-stores-by-category.component';
 import { StoreService } from 'src/services/store.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {CartService} from "../../../services/cart.service";
 
 @Component({
   selector: 'app-stores-by-category',
@@ -12,9 +12,10 @@ export class StoresByCategoryComponent implements OnInit {
 
 id!:number;
 stores:any;
+newOrder:any;
 pstores:any;
 
-  constructor(private StoreService:StoreService ,private route:ActivatedRoute ) { }
+  constructor(private StoreService:StoreService ,private route:ActivatedRoute,private cartS:CartService ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe({
@@ -25,11 +26,18 @@ pstores:any;
     this.PopularStoresByCategory(this.id);
   }
 
+  reload(){
+    window.location.reload();
+  }
   storesByCategory(id:any){
     this.StoreService.getStoresByCategory(id).subscribe({
-      next: (response: any) => this.stores = response,
+      next: (response: any) =>{
+        this.stores = response
+      },
       error: (error: any) => console.log(error),
-      complete: () => console.log("petuxe")
+      complete: () => {
+        console.log("petuxe")
+      }
   })
   }
 
@@ -39,6 +47,25 @@ pstores:any;
       error: (error: any) => console.log(error),
       complete: () => console.log("petuxe")
   })
+  }
+
+  getStoreId(storeId:any){
+    let acc=JSON.parse(localStorage.getItem('auth')||'{}');
+    let account= acc.data.id;
+    this.initiateOrder(storeId, account) ;
+  }
+
+  initiateOrder(store: any, account: any) {
+    this.cartS.initiateOrder(store, account).subscribe(
+      {
+        next:(response: any) => {
+          this.newOrder = response;
+          localStorage.setItem('newOrder', JSON.stringify(this.newOrder));
+        },
+        error: (error: any) => console.log(error),
+        complete: () => console.log(this.newOrder)
+      }
+    );
   }
 
 }

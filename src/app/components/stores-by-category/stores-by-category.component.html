@@ -1,1 +1,41 @@
-{{stores| json}}
+<section class="homepage container" style="text-align: center; ">
+  <div class="d-none d-lg-block"  >
+    <br>
+    <h1>ΚΑΤΗΓΟΡΙΑ</h1>
+    <h1 >{{stores.data[0].category.name}}</h1>
+    <h3 class="h2 mt-0 mb-4"   style="text-decoration: underline;">Διάλεξε Κατάστημα: </h3>
+    <br>
+    <br>
+
+    <div class="row" >
+      <div class="homepage-fixed-offer col-3" *ngFor="let store of stores.data">
+        <div class="mb-5"  >
+          <img src="../../../assets/images/storeImages/McDonalds logo.png" alt="Σουβλάκι"/>
+        </div>
+        <a  (click)="getStoreId(store.id);  "  [routerLink]="['/Store-item/'+store.id+'/products']"  class="hover-no-decoration" style="text-decoration:none">
+          <div class="d-flex justify-content-center" >
+
+            <h3 class="pr-5" style="text-decoration: none;" >{{store.storeName}}</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+
+
+
+  <div class="row" >
+    <h1>Most Popular</h1>
+    <div class="homepage-fixed-offer col-3" *ngFor="let pstore of pstores.data">
+      <div class="mb-5"  >
+        <img src="../../../assets/images/storeImages/McDonalds logo.png" alt="Σουβλάκι"/>
+      </div>
+      <a  (click)="getStoreId(pstore.key);  "  [routerLink]="['/Store-item/'+pstore.key+'/products']"  class="hover-no-decoration" style="text-decoration:none">
+        <div class="d-flex justify-content-center" >
+
+          <h3 class="pr-5" style="text-decoration: none;" >{{pstore.value}}</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  </div>
+</section>

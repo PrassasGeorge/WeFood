@@ -10,15 +10,15 @@
       <input class="form-control mr-sm-2 searchBar" type="search" placeholder="Search" aria-label="Search" placeholder="Αναζήτησε κατάστημα με βάση το όνομα" />
         <button class="btn btn-outline-danger my-2 my-sm-0 searchBtn" type="submit" > 🔎</button>
     </form>
-<div class="dropdown">
+<div class="dropdown" (click)="reload()">
   <label for="labelForstoreCategory" style="color: white; font-size: 1.3rem; margin-right: 15px; ">Κατάστημα ανά κατηγορία </label>
-  <select name="selectStoreCategory" >
-    <option  [value]="store.id" *ngFor="let store of stores.data">
 
-<a [routerLink]="['/StoresByCategory/' + store.id]"> {{store.name}} </a>
-    </option>
+  <div class="dropdown-content" >
 
-  </select >
+  <a *ngFor="let store of stores.data"   [routerLink]="['/StoresByCategory/' + store.id]" >{{store.name}} </a>
+
+
+  </div >
 </div>
 
 

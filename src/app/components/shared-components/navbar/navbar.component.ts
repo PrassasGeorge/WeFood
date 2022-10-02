@@ -9,7 +9,7 @@ import { StoreService } from 'src/services/store.service';
 })
 export class NavbarComponent implements OnInit {
 
-  stores:any=[];
+  stores:any;
   constructor( private storeService:StoreService) { }
 
 
@@ -25,12 +25,9 @@ searchStoresByCategory(){
 })
 }
 
-// searchStoresByCategory(){
-//   this.storeService.getStoreCategories().subscribe({
-//     next: (response: any) => this.stores = response,
-//     error: (error: any) => console.log(error),
-//     complete: () => console.log("petuxe")
-// })
+reload(){
+    window.location.reload();
+}
 }
 
 
