@@ -1,7 +1,8 @@
-import { StoreService } from 'src/services/store.service';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {CartService} from "../../../services/cart.service";
+import {StoreService} from "../../../services/store.service";
 
 @Component({
   selector: 'app-stores-by-category',

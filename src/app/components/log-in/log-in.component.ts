@@ -22,36 +22,14 @@ export class LogInComponent implements OnInit {
     console.log(this.loginModel);
     this.accountService.loginUser(this.loginModel).subscribe(
       {
-        next: (response: any) => this.loginModel = response,
+        next: (response: any) => {
+          this.loginModel = response;
+          localStorage.setItem('auth', JSON.stringify(this.loginModel));
+        },
         error: (error: any) => console.log(error),
         complete: () => console.log("logged user")
       }
     )
   }
 
-
-/*
-  auth:any;
-  username: any;
-  password: any;
-
-
-  login(username: string, password: string){
-    this.authService.login(username, password).subscribe(
-      {
-        next: (response: any) => {
-          this.auth=response;
-          localStorage.setItem('auth', JSON.stringify(this.auth));
-        },
-        error: (error: any) => console.log(error),
-        complete: () => console.log("Usern Authenticated")
-
-      }
-    )
-  }
-
-  logout(){
-    this.auth.logout();
-  }
- */
 }
