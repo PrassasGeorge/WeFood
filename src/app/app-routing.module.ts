@@ -1,7 +1,6 @@
 import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
 import { StoreItemComponent } from './components/store-item/store-item.component';
 import { LogInComponent } from './components/log-in/log-in.component';
-import { RegisterComponent } from './components/register/register.component';
 import { UserComponent } from './components/user/user.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
@@ -15,7 +14,6 @@ const routes: Routes = [
   {path:'Contact-us', component:ContactUsComponent},
   {path:'Cart' , component:CartComponent},
   {path:'User' , component:UserComponent},
-  {path:'Register' , component:RegisterComponent},
   {path:'Log-in' , component:LogInComponent},
   {path:'Store-item' , component:StoreItemComponent},
   {path:'app-popular-products' , component:PopularProductsComponent},

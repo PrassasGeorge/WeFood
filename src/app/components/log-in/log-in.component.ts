@@ -1,34 +1,42 @@
+import { RegisterModel } from './../models/RegisterModel';
 import { Component, OnInit } from '@angular/core';
-import {AccountService} from "../../../services/account.service";
-import {LoginModel} from "../models/LoginModel";
-
+import { AccountService } from '../../../services/account.service';
+import { LoginModel } from '../models/LoginModel';
 
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.css']
+  styleUrls: ['./log-in.component.css'],
 })
 export class LogInComponent implements OnInit {
+  loginModel: LoginModel = new LoginModel();
+  registerModel:RegisterModel = new RegisterModel();
 
-  loginModel:LoginModel=new LoginModel();
+  constructor(private accountService: AccountService) {}
 
-  constructor(private accountService:AccountService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  userLogin() {
+    console.log(this.loginModel);
+    this.accountService.loginUser(this.loginModel).subscribe({
+      next: (response: any) => {
+        this.loginModel = response;
+        localStorage.setItem('auth', JSON.stringify(this.loginModel));
+      },
+      error: (error: any) => console.log(error),
+      complete: () => console.log('Usern Authenticated'),
+    });
   }
 
-
-  userLogin(){
-    console.log(this.loginModel);
-    this.accountService.loginUser(this.loginModel).subscribe(
+  userRegister(){
+    console.log(this.registerModel);
+    this.accountService.registerUser(this.registerModel).subscribe(
       {
-        next: (response: any) => {
-          this.loginModel = response;
-          localStorage.setItem('auth', JSON.stringify(this.loginModel));
-        },
+        next: (response: any) => this.registerModel = response,
         error: (error: any) => console.log(error),
-        complete: () => console.log("Usern Authenticated")
-      })
+        complete: () => console.log("registered user")
+      }
+    )
+  }
 
-        }
 }

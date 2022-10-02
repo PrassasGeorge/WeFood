@@ -1,3 +1,4 @@
+import { StoreService } from 'src/services/store.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,12 +13,10 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreItemComponent } from './components/store-item/store-item.component';
 import { UserComponent } from './components/user/user.component';
-import { RegisterComponent } from './components/register/register.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { PopularStoresComponent } from './components/popular-stores/popular-stores.component';
 import { PopularProductsComponent } from './components/popular-products/popular-products.component';
 import { PopularStoresByCategoryComponent } from './components/popular-stores-by-category/popular-stores-by-category.component';
-import { StoreService } from 'src/services/store.service';
 import { CartService } from 'src/services/cart.service';
 import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
 import { FormsModule } from '@angular/forms';
@@ -34,7 +33,6 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     StoreItemComponent,
     UserComponent,
-    RegisterComponent,
     LogInComponent,
     PopularStoresComponent,
     PopularProductsComponent,
