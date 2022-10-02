@@ -37,13 +37,13 @@ export class StoreService {
     return this.http.get(this.URL + "/storeCategories");
   }
 
-//   //Get stores by category
-//   getStoresByCategory(storeCategories:any){
-//     let queryParams = new HttpParams();
-//     queryParams = queryParams.append("storeCategories", storeCategories);
+  //Get stores by category
+  getStoresByCategory(storeCategories:any){
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("storeCategories", storeCategories);
 
-//     return this.http.get(this.URL + "/storeCategories", {params:queryParams});
-//   }
+    return this.http.get(this.URL + "/storeCategories", {params:queryParams});
+  }
 
 // //search by store category
 //   search(searchString:string){
@@ -84,13 +84,8 @@ export class StoreService {
 
 
    //Get stores by id
-   getStoresByCategory(id:number){
-
-    let queryParams = new HttpParams();
-    queryParams = queryParams.append("id", id);
-
-
-    return this.http.get(this.URL +"/categories/", {params:queryParams});
+   PopularStoresByCategory(id:number){
+    return this.http.get(this.URL +"/popular/categories/" + id);
   }
 
  }
