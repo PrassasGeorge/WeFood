@@ -7,15 +7,15 @@
   </div>
   <br>
   <br>
-  <form action="contact-form"  style="text-align: center;">
-    <label  for="email"></label>
-    <input #username type="text" id="email" style="margin-left:12px;" placeholder="Email" style="text-align: center; color: rgb(103, 106, 106);" required>
+  <form (ngSubmit)="userLogin()">
+    <label for="email"></label>
+    <input type="email" id="email" class="form-control" style="margin-left:12px;" placeholder="Email" name="email" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="loginModel.email" required>
 <br>
     <label for="password"></label>
-    <input #password type="password" id="password" placeholder=" Κωδικός Πρόσβασης" style="text-align: center; color: rgb(103, 106, 106);" required>
-  </form>
+    <input type="password" id="password" class="form-control" placeholder=" Κωδικός Πρόσβασης" name="password" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="loginModel.password" required>
   <div class="card">
-    <input class="btn btn-primary" type="submit" name="submit" (click)="login(username.value,password.value)" [routerLink]="['/']" value="Σύνδεση" >
+    <input class="btn btn-primary" type="submit" name="submit" value="Σύνδεση" >
   </div>
+  </form>
 </div>
 

@@ -6,24 +6,28 @@
     <p class="card-text"></p>
   </div>
   <br>
-  <form action="contact-form" >
-    <label for="firstname"></label>
-    <input type="text" id="firstname" placeholder=" Όνομα" style="text-align: center; color: rgb(103, 106, 106);" required>
 
-    <label for="lastname"></label><br>
-    <input type="text" id="lastname" placeholder="Επώνυμο" style="text-align: center; color: rgb(103, 106, 106);" required>
+  <form (ngSubmit)="userRegister()">
+    <label for="firstName"></label>
+    <input type="text" id="firstName" class="form-control" placeholder=" Όνομα" name="firstName" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.firstName" required>
+
+    <label for="lastName"></label><br>
+    <input type="text" id="lastName"  class="form-control" name="lastName" placeholder="Επώνυμο" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.lastName" required>
 
     <label for="phoneNumber"></label><br>
-    <input type="phone" id="phone" placeholder="Τηλέφωνο" style="text-align: center; color: rgb(103, 106, 106);" required>
+    <input type="phone" id="phoneNumber" class="form-control" name="phoneNumber" placeholder="Τηλέφωνο" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.phoneNumber" required>
 
     <label for="address"></label><br>
-    <input type="text" id="address" placeholder="Διεύθυνση Κατοικίας" style="text-align: center; color: rgb(103, 106, 106);" required>
+    <input type="text" id="address" class="form-control" name="address" placeholder="Διεύθυνση Κατοικίας" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.address" required>
 
     <label for="email"></label><br>
-    <input type="text" id="email"  placeholder="example@gmail.com" style="text-align: center; color: rgb(103, 106, 106);" required>
-  </form>
+    <input type="email" id="email" class="form-control" name="email" placeholder="example@gmail.com" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.email" required>
+
+    <label for="password"></label><br>
+    <input type="password" id="password" class="form-control" name="password" placeholder="password" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.password" required>
   <br>
   <div class="card">
-    <input class="btn btn-primary" type="submit" name="submit" value="Εγγραφή" >
+    <input class="btn btn-primary" type="submit" name="submit" value="Εγγραφή">
   </div>
+  </form>
 </div>
