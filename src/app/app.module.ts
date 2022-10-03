@@ -41,7 +41,7 @@ import { authInterceptorProviders } from 'src/helpers/auth.interceptor';
     PopularProductsComponent,
     PopularStoresByCategoryComponent,
     StoresByCategoryComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
   ],
   imports: [
     BrowserModule,

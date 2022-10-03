@@ -40,7 +40,6 @@ export class StoreService {
 
   //Get stores by category
   getStoresByCategory(id: number) {
-
     return this.http.get(this.URL + "/categories/" + id);
   }
 
@@ -48,25 +47,33 @@ export class StoreService {
   Initiate(store: any, account: any) {
     let queryParams = new HttpParams();
     queryParams = queryParams.set("store", store)
-      .set("account", account = 1)
+                             .set("account", account = 1)
 
     return this.http.get(this.URL + "/initiate", {params: queryParams});
   }
 
+  //Get all popular Stores
   getPopularStores() {
     return this.http.get(this.URL + "/popular")
   }
 
+  //Get top 10 products
   mostPopularProducts() {
     return this.http.get(this.URL + "/popular/products")
   }
 
+  //Get most popular stores in general
   mostPopularStoresInGeneral() {
     return this.http.get(this.URL + "/popular")
   }
 
+  //Get all popular stores by category id
   PopularStoresByCategory(id: number) {
     return this.http.get(this.URL + "/popular/categories/" + id);
+  }
 
+  //Search stores by name
+  GetStoresByName(name:string){
+    return this.http.get(this.URL + "/search?searchString="+ name )
   }
 }
