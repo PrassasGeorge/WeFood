@@ -63,9 +63,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "latest-angular:build",
+            "port": 8081
+          },
           "configurations": {
             "production": {
               "browserTarget": "WeFood:build:production"
+
             },
             "development": {
               "browserTarget": "WeFood:build:development"
@@ -77,6 +82,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "WeFood:build"
+
           }
         },
         "test": {
