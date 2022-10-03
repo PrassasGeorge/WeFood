@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchStoresByCategory();
+    this.initiation();
   }
 
 searchStoresByCategory(){
@@ -37,6 +38,19 @@ SearchStoresByName(searchText:any){
 reload(){
     window.location.reload();
 }
+
+  init: any;
+  loggedIn:any;
+
+  initiation(){
+    this.init = localStorage.getItem('auth')||'{}';
+    if(this.init != '{}'){
+      this.loggedIn = this.init;
+    }
+    else {
+      this.loggedIn= null;
+    }
+  }
 }
 
 

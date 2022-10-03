@@ -17,7 +17,14 @@
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse justifyEnd" id="navbarSupportedContent">
+{{initiation()}}
+  <div class="collapse navbar-collapse justifyEnd" id="navbarSupportedContent" *ngIf="loggedIn">
+  <div class="dropdown" (click)="reload()">
+  <label for="labelForstoreCategory" style="color: white; font-size: 1.3rem; margin-right: 15px; ">Κατάστημα ανά κατηγορία </label>
+
+  <div class="dropdown-content" >
+
+  <a *ngFor="let store of stores.data"   [routerLink]="['/StoresByCategory/' + store.id]" >{{store.name}} </a>
 
     <form class="form-inline mx-4 mx-lg-5 justifySearch">
 
@@ -88,4 +95,5 @@
       </div>
     </div>
   </div>
-</nav>
+  </nav>
+  

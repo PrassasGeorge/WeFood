@@ -5,24 +5,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-
-    constructor() {}
-    ngOnInit(): void {
-        this.initiation();
-    }
-
-
+export class AppComponent {
   title = 'WeFood';
-   init: any;
-   loggedIn:any;
 
-   initiation(){
-   this.init = localStorage.getItem('auth')||'{}';
-   if(this.init != '{}'){
-      this.loggedIn = this.init;
-   }
-   else {
-     this.loggedIn= null;
-   }
-}  }
+}

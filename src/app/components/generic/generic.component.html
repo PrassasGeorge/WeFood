@@ -1,0 +1,6 @@
+{{initiation()}}
+
+  <app-log-in *ngIf="!loggedIn"></app-log-in>
+  <router-outlet *ngIf="loggedIn"></router-outlet>
+
+

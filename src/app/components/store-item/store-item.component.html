@@ -1,29 +1,42 @@
 
+<div class="container-" style="text-align: right; padding: 20px;">
+  <div class="row" *ngIf="products">
 
-<div style="background-color: rgb(185,158,149); padding-top: 3rem;">
+    <h1>{{products.data.storeName}}</h1><br>
+    <p>Τηλέφωνο: {{products.data.phoneNumber}}</p><br>
+  <p>Ηλεκτρονική Διεύθυνση: {{products.data.emailAddress}}</p><br>
+    <p> Διεύθυνση: {{products.data.address}}</p><br>
+    <p>Πόλη: {{products.data.city}}</p>
+  </div>
+<div style=" padding-top: 3rem;">
   <div class="popularHeader">
     <h3>Τα προϊόντα μας:</h3>
   </div>
-  <div class="d-lg-block">
-    <div class="card-group" *ngIf="products">
-      <div class="mb-5" *ngFor="let item of products.data.storeItems">
-        <div class="card m-2 col-12">
-          <img
-            src="../../../assets/images/storeitemImages/burger.jpg"
-            alt="Denim Jeans"
-            style="width: 100%"
-          />
-          <div class="card-body">
-            <p class="card-text">{{ item.itemName }}</p>
 
-            <p class="price" style="color: white">€{{ item.price }}</p>
-          </div>
+</div>
+
+<div class="container" style="margin-top:50px;">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let item of products.data.storeItems">
+      <div class="card-sl">
+        <div class="card-image">
+          <img
+            src="../../../assets/images/storeitemImages/burger.jpg" alt="Burger"/>
+
+        <a class="card-action" ><i class="fa fa-heart"></i></a>
+        <div class="card-heading">
+          <p class="card-text" style="text-align: left">{{ item.itemName }}</p>
+        </div>
+        <div class="card-text">
+          Description
+          <p class="price" style="text-align: center">€{{ item.price }}</p>
+        </div>
           <div class="card-footer">
-            <p><button (click)="addToCart(item)">Προσθήκη στο καλάθι</button></p>
-          </div>
+          <p><button class="card-button" (click)="addToCart(item)">Προσθήκη στο καλάθι</button></p>
         </div>
       </div>
     </div>
   </div>
-
+  </div>
 </div>
+  </div>
