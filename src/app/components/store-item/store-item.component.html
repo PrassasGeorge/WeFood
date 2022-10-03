@@ -1,21 +1,29 @@
-<div class="popularHeader">
-  <h3>Τα προϊόντα μας:</h3>
-</div>
-<div class=" d-lg-block" >
-<div class="card-group" *ngIf="products">
-  <div class = "mb-5" *ngFor="let item of products.data.storeItems">
-<div class="card m-2 col-12" >
-  <img  src="../../../assets/images/storeitemImages/burger.jpg"  alt="Denim Jeans" style="width:100%">
-  <div class="card-body">
-  <p class="card-text">{{item.itemName}}</p>
 
-  <p class="price" style="color: white;">€{{item.price}}</p>
+
+<div style="background-color: rgb(185,158,149);">
+  <div class="popularHeader">
+    <h3>Τα προϊόντα μας:</h3>
   </div>
- <div class="card-footer">
-  <p><button (click)="addToCart(item)" >Προσθήκη στο καλάθι</button></p>
- </div>
-</div>
-</div>
-</div>
-</div>
+  <div class="d-lg-block">
+    <div class="card-group" *ngIf="products">
+      <div class="mb-5" *ngFor="let item of products.data.storeItems">
+        <div class="card m-2 col-12">
+          <img
+            src="../../../assets/images/storeitemImages/burger.jpg"
+            alt="Denim Jeans"
+            style="width: 100%"
+          />
+          <div class="card-body">
+            <p class="card-text">{{ item.itemName }}</p>
 
+            <p class="price" style="color: white">€{{ item.price }}</p>
+          </div>
+          <div class="card-footer">
+            <p><button (click)="addToCart(item)">Προσθήκη στο καλάθι</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
