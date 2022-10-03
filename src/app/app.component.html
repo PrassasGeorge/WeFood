@@ -1,7 +1,13 @@
+{{initiation()}}
+<div *ngIf="!loggedIn" >
+  <app-log-in></app-log-in>
+</div>
+
+<div *ngIf="loggedIn">
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
-
+</div>
 
 
 
