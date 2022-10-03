@@ -1,58 +1,56 @@
-<div class="cardUserDetails" style="width: 18rem; margin: auto; margin-top: 5%; margin-bottom: 5%; border: blue solid; border-radius: 12px; ">
-  <img class="card-img-top" src="../../../assets/images/userImages/userloggin.jpg"  alt="Card image cap">
-  <div class="card-body">
-    <br>
-    <h5 class="card-title" style="text-align: center;">Συνδέσου στο λογαριασμό σου!</h5>
-    <p class="card-text"></p>
+
+
+<div class="color  ">
+  <div class="container pt-5" id="container">
+  <div class="form-container sign-up-container">
+    <form (ngSubmit)="userRegister()">
+      <h1>Create Account</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <input type="text" id="firstName" placeholder=" Όνομα" name="firstName" [(ngModel)]="registerModel.firstName" required>
+      <input type="text" id="lastName"  name="lastName" placeholder="Επώνυμο" [(ngModel)]="registerModel.lastName" required>
+      <input type="email" id="#email"  name="email" placeholder="example@gmail.com" [(ngModel)]="registerModel.email" required>
+      <input type="password" id="#password"  name="password" placeholder="Κωδικός" [(ngModel)]="registerModel.password" required>
+      <input type="phone" id="phoneNumber" name="phoneNumber" placeholder="Τηλέφωνο"  [(ngModel)]="registerModel.phoneNumber" required>
+      <input type="text" id="address" name="address" placeholder="Διεύθυνση Κατοικίας"  [(ngModel)]="registerModel.address" required>
+      <button type="submit" name="submit">Εγγραφή</button>
+    </form>
   </div>
-  <br>
-  <br>
-  <form (ngSubmit)="userLogin()">
-    <label for="email"></label>
-    <input type="email" id="email" class="form-control" style="margin-left:12px;" placeholder="Email" name="email" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="loginModel.email" required>
-<br>
-    <label for="password"></label>
-    <input type="password" id="password" class="form-control" placeholder=" Κωδικός Πρόσβασης" name="password" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="loginModel.password" required>
-  <div class="card">
-    <input class="btn btn-primary" type="submit" name="submit" value="Σύνδεση" >
+  <div class="form-container sign-in-container">
+    <form (ngSubmit)="userLogin()">
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <input type="email" id="email"  placeholder="Email" name="email" [(ngModel)]="loginModel.email" required/>
+      <input type="password" id="password" placeholder=" Κωδικός Πρόσβασης" name="password"  [(ngModel)]="loginModel.password" required/>
+      <a href="https://www.efood.gr">Forgot your password?</a>
+      <button>Sign In</button>
+    </form>
   </div>
-  </form>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome ΜπακLOVEας!</h1>
+        <p>Το ξέρουμε ότι σου λείψαμε, μπες τώρα για να απολαύσεις τα πιο νόστιμα φαγητά.</p>
+        <button class="ghost" id="signIn" (click)="inClick()">Sign In</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Foodlover!</h1>
+        <p>Δημιούργησε τώρα τον λογαριασμό σου και έλα μαζί μας για να απολαύσεις τα πιο νόστιμα φαγητά.</p>
+        <button class="ghost" id="signUp" (click)="upClick()">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+<<<<<<< HEAD
+=======
 </div>
 
-
-
-
-<div class="cardLogin" style="width: 18rem;">
-  <img class="card-img-top" src="../../../assets/images/userImages/userloggin.jpg"  alt="Card image cap">
-  <div class="card-body">
-    <br>
-    <h5 class="card-title">Εγγραφή Νέου Χρήστη</h5>
-    <p class="card-text"></p>
-  </div>
-  <br>
-
-  <form (ngSubmit)="userRegister()">
-    <label for="firstName"></label>
-    <input type="text" id="firstName" class="form-control" placeholder=" Όνομα" name="firstName" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.firstName" required>
-
-    <label for="lastName"></label><br>
-    <input type="text" id="lastName"  class="form-control" name="lastName" placeholder="Επώνυμο" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.lastName" required>
-
-    <label for="phoneNumber"></label><br>
-    <input type="phone" id="phoneNumber" class="form-control" name="phoneNumber" placeholder="Τηλέφωνο" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.phoneNumber" required>
-
-    <label for="address"></label><br>
-    <input type="text" id="address" class="form-control" name="address" placeholder="Διεύθυνση Κατοικίας" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.address" required>
-
-    <label for="email"></label><br>
-    <input type="email" id="email" class="form-control" name="email" placeholder="example@gmail.com" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.email" required>
-
-    <label for="password"></label><br>
-    <input type="password" id="password" class="form-control" name="password" placeholder="password" style="text-align: center; color: rgb(103, 106, 106);" [(ngModel)]="registerModel.password" required>
-  <br>
-  <div class="card">
-    <input class="btn btn-primary" type="submit" name="submit" value="Εγγραφή">
-  </div>
-  </form>
-</div>
+>>>>>>> 7fc03a952512a48f9a4b428698f733dcfe52b0bf
 

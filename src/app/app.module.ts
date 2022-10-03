@@ -1,3 +1,4 @@
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { StoreService } from 'src/services/store.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +21,8 @@ import { PopularStoresByCategoryComponent } from './components/popular-stores-by
 import { CartService } from 'src/services/cart.service';
 import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
 import { FormsModule } from '@angular/forms';
-import { OrderHistoryComponent } from './order-history/order-history.component';
+import { authInterceptorProviders } from 'src/helpers/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,6 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     PopularProductsComponent,
     PopularStoresByCategoryComponent,
     StoresByCategoryComponent,
-    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [StoreService,CartService],
+  providers: [StoreService,CartService,authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

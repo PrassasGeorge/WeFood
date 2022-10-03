@@ -15,7 +15,6 @@ const routes: Routes = [
   {path:'Contact-us', component:ContactUsComponent},
   {path:'Cart' , component:CartComponent},
   {path:'User' , component:UserComponent},
-  {path:'Log-in' , component:LogInComponent},
   {path:'Store-item' , component:StoreItemComponent},
   {path:'app-popular-products' , component:PopularProductsComponent},
   {path:'Store-item/:id/products' , component:StoreItemComponent},
