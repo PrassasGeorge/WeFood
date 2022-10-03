@@ -13,9 +13,8 @@ export class StoreItemComponent implements OnInit {
 
   constructor(private storeS:StoreService,private route:ActivatedRoute,private cartS:CartService) { }
 
-  storesById:any;
   products:any;
-  id!:number;
+  id!: number ;
   newOrder:any;
 
   ngOnInit(): void {
@@ -26,13 +25,6 @@ export class StoreItemComponent implements OnInit {
     this.productsByStore(this.id);
   }
 
-  getStoreById(id:number){
-    this.storeS.getStore(id).subscribe({
-      next: (response: any) => this.storesById = response,
-        error: (error: any) => console.log(error),
-        complete: () => console.log("petuxe")
-    })
-  }
 
   productsByStore(id:number){
     this.storeS.getProductsByStore(id).subscribe({
