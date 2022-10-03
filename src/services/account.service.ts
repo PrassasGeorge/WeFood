@@ -21,7 +21,8 @@ export class AccountService {
 private registerUrl= environment.baseUrl+'/authentication/signup';
 private loginUrl= environment.baseUrl+'/authentication/signin';
 private logoutUrl= environment.baseUrl+'/authentication/logout';
-private baseUrl= environment.baseUrl+'/orders/account/'
+private baseUrl= environment.baseUrl+'/orders/account/';
+  private accUrl= environment.baseUrl+'/accounts/';
 
 
   constructor(private http:HttpClient) { }
@@ -50,4 +51,9 @@ private baseUrl= environment.baseUrl+'/orders/account/'
   }
 
 
+  getDetails() {
+    let account=JSON.parse((localStorage.getItem('auth')||'{}'))
+    let id=account.data.id
+    return this.http.get(this.accUrl+'details?id='+id)
+  }
 }
