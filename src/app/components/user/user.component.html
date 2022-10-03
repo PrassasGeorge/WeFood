@@ -17,15 +17,8 @@
   <div class="orderDiv">
     <p>Για να δείτε το ιστορικό των παραγγελιών σας πατήστε παρακάτω:</p>
     <div class="orderHistory" >
-      <button (click)="getOrders()">Ιστορικό Παραγγελιών </button>
-      <div *ngFor=" let order of orders.data">
-      <ul >
-      <li class="list-group-item">{{order.storeName|json}}</li>
-      <li class="list-group-item">{{order.cost}}</li>
-      {{orders.data|json}}
-      </ul>
+      <button (click)="getOrders()" routerLink="/Order-history">Ιστορικό Παραγγελιών </button>
       </div>
-    </div>
   </div>
 
   <div class="card" >

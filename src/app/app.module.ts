@@ -20,6 +20,7 @@ import { PopularStoresByCategoryComponent } from './components/popular-stores-by
 import { CartService } from 'src/services/cart.service';
 import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
 import { FormsModule } from '@angular/forms';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     PopularStoresComponent,
     PopularProductsComponent,
     PopularStoresByCategoryComponent,
-    StoresByCategoryComponent
+    StoresByCategoryComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
