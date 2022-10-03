@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr style="text-decoration: underline;">
+      <th>Κατάστημα</th>
+      <th>Ημερομηνία Παραγγελίας</th>
+      <th>Προϊόντα</th>
+      <th>Ποσότητα</th>
+      <th>Συνολικό κόστος Παραγγελίας</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let order of orders.data">
+      <td>{{order.storeName}}</td>
+      <td>{{order.submittedDate | date:'short'}}</td>
+      <td>{{order.orderItems.itemName}}</td>
+      <td>{{order.orderItems.quantity}}</td>
+      <td>{{order.orderItems.quantity}}</td>
+    </tr>
+
+  </tbody>
+</table>

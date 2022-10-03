@@ -1,3 +1,4 @@
+import { OrderHistoryComponent } from './order-history/order-history.component';
 import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
 import { StoreItemComponent } from './components/store-item/store-item.component';
 import { LogInComponent } from './components/log-in/log-in.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'Store-item' , component:StoreItemComponent},
   {path:'app-popular-products' , component:PopularProductsComponent},
   {path:'Store-item/:id/products' , component:StoreItemComponent},
-  {path:'StoresByCategory/:id', component:StoresByCategoryComponent}
+  {path:'StoresByCategory/:id', component:StoresByCategoryComponent},
+  {path:'Order-history' , component:OrderHistoryComponent}
 ];
 
 @NgModule({

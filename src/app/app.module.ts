@@ -1,3 +1,4 @@
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { StoreService } from 'src/services/store.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
