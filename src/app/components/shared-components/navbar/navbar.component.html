@@ -4,8 +4,8 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse justifyEnd" id="navbarSupportedContent">
+{{initiation()}}
+  <div class="collapse navbar-collapse justifyEnd" id="navbarSupportedContent" *ngIf="loggedIn">
     <form class="form-inline mx-4 mx-lg-5 justifySearch">
       <input class="form-control mr-sm-2 searchBar" type="search" placeholder="Search" aria-label="Search" placeholder="Αναζήτησε κατάστημα με βάση το όνομα" />
         <button class="btn btn-outline-danger my-2 my-sm-0 searchBtn" type="submit" > 🔎</button>

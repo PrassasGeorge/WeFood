@@ -22,6 +22,7 @@ import { CartService } from 'src/services/cart.service';
 import { StoresByCategoryComponent } from './components/stores-by-category/stores-by-category.component';
 import { FormsModule } from '@angular/forms';
 import { authInterceptorProviders } from 'src/helpers/auth.interceptor';
+import { GenericComponent } from './components/generic/generic.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { authInterceptorProviders } from 'src/helpers/auth.interceptor';
     PopularProductsComponent,
     PopularStoresByCategoryComponent,
     StoresByCategoryComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    GenericComponent
   ],
   imports: [
     BrowserModule,
