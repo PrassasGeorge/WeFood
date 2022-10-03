@@ -1,21 +1,30 @@
-<table class="table">
-  <thead>
-    <tr style="text-decoration: underline;">
-      <th>Κατάστημα</th>
-      <th>Ημερομηνία Παραγγελίας</th>
-      <th>Προϊόντα</th>
-      <th>Ποσότητα</th>
-      <th>Συνολικό κόστος Παραγγελίας</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr  *ngFor="let order of orders.data">
-      <td>{{order.storeName}}</td>
-      <td>{{order.submittedDate | date:'short'}}</td>
-      <td>{{order.orderItems.itemName}}</td>
-      <td>{{order.orderItems.quantity}}</td>
-      <td>{{order.orderItems.quantity}}</td>
-    </tr>
-
-  </tbody>
-</table>
+<div class="inside" >
+  <table class="table table-bordered">
+    <thead>
+      <tr style="text-decoration: underline; text-align: center;">
+        <th>Κατάστημα</th>
+        <th>Προϊόντα</th>
+        <th>Ποσότητα</th>
+        <th>Συνολικό κόστος Παραγγελίας</th>
+        <th>Ημερομηνία Παραγγελίας</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let order of orders.data" style=" text-align: center;">
+        <td>{{order.storeName}}</td>
+        <td >
+          <ul>
+            <li *ngFor="let oi of order.orderItems">{{oi.itemName}}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li *ngFor="let oi of order.orderItems">{{oi.quantity}}</li>
+          </ul>
+        </td>
+        <td>{{order.cost}} €</td>
+        <td>{{order.submittedDate | date:'short'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

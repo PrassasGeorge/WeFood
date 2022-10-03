@@ -1,4 +1,4 @@
-import { OrderHistoryComponent } from './components/order-history/order-history.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 import { StoreService } from 'src/services/store.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -41,6 +41,7 @@ import { authInterceptorProviders } from 'src/helpers/auth.interceptor';
     PopularProductsComponent,
     PopularStoresByCategoryComponent,
     StoresByCategoryComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -21,7 +21,7 @@ export class AccountService {
 private registerUrl= environment.baseUrl+'/authentication/signup';
 private loginUrl= environment.baseUrl+'/authentication/signin';
 private logoutUrl= environment.baseUrl+'/authentication/logout';
-private baseUrl= environment.baseUrl+'/orders/accountDto/'
+private baseUrl= environment.baseUrl+'/orders/account/'
 
 
   constructor(private http:HttpClient) { }
