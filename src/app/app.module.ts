@@ -25,6 +25,7 @@ import { authInterceptorProviders } from 'src/helpers/auth.interceptor';
 import { GenericComponent } from './components/generic/generic.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { GenericComponent } from './components/generic/generic.component';
     PopularStoresByCategoryComponent,
     StoresByCategoryComponent,
     OrderHistoryComponent,
-    GenericComponent
+    GenericComponent,
+
   ],
   imports: [
     BrowserModule,

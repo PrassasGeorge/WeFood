@@ -127,7 +127,7 @@
               </select>
             </ul>
 
-            <button (click)="checkout(option.value); clearCart()" type="button" class="btn btn-primary btn-lg btn-block">
+            <button (click)="checkOrder(option.value); clearCart()" type="button" class="btn btn-primary btn-lg btn-block">
               Παραγγελία
             </button>
           </div>
@@ -137,22 +137,26 @@
   </div>
 </section>
 
+
 <section *ngIf="!order">
-  <div>
-    <h1>
-      Start New Order
-    </h1>
-    <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="" > Stores</button>
+<div *ngIf=" finalOrder">
+  <div class="container pt-5" id="container-order">
+  <div class="form-container sign-up-container">
+    <form class="form-order">
+      <h1>Η Παραγγελία σου</h1>
+      <input type="text"  value="{{finalOrder.data.store.storeName}}" disabled>
+      <input type="text"  value="{{finalOrder.data.deliveryAddress}}"   disabled>
+      <div class="col-12" *ngFor="let oi of finalOrder.data.orderItems">
+        <input type="text" value=" {{oi.storeItem.itemName}} € {{oi.storeItem.price}}  Quantity: {{oi.quantity}} " disabled>
+      </div>
+      <input type="text" value="{{finalOrder.data.cost}}"  disabled>
+      <input type="text" value="{{finalOrder.data.paymentMethod}}"  disabled>
+      <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="" > Start New Order</button>
+    </form>
+  </div>
+  </div>
   </div>
 </section>
-
-<section *ngIf="finalOrder">
-  <div *ngFor=" let oi of finalOrder.data.orderItems">
-    {{oi.storeItem.itemName|json}}
-    {{oi.quantity |json}}
-  </div>
-</section>
-
 
 
 

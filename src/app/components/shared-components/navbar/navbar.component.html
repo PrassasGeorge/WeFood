@@ -1,99 +1,62 @@
 <nav class="navbar navbar-expand-lg navbar-light px-4 py-4">
-  <a class="navbar-brand logoBtn" href="#" style="color: white">
-    <img
-      height="60px"
-      style="margin-right: 5px"
-      src="https://cdn-icons-png.flaticon.com/512/5787/5787016.png"
-    />WeFood</a
-  >
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <a class="navbar-brand logoBtn" href="/" style="color: white; ">
+    <img height="60px"  style="margin-right: 5px;" src="https://cdn-icons-png.flaticon.com/512/5787/5787016.png"/>WeFood</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 {{initiation()}}
   <div class="collapse navbar-collapse justifyEnd" id="navbarSupportedContent" *ngIf="loggedIn">
-  <div class="dropdown" (click)="reload()">
-  <label for="labelForstoreCategory" style="color: white; font-size: 1.3rem; margin-right: 15px; ">Κατάστημα ανά κατηγορία </label>
+    <form (ngSubmit)="SearchStoresByName(in.value)" class="form-inline mx-4 mx-lg-5 justifySearch">
+      <input #in id="search" class="form-control mr-sm-2 searchBar" type="search" placeholder="Search" aria-label="Search" placeholder="Αναζήτησε κατάστημα με βάση το όνομα" />
+      <button class="btn btn-outline-danger my-2 my-sm-0 searchBtn" type="submit" > 🔎</button>
+    </form>
+      <div class="">
+      <div class="dropdown" *ngIf="storesS">
+      <div class="dropdown-content" (click)="reload()">
+
+          <a
+            *ngFor="let st of storesS.data"
+            [routerLink]="['/Store-item/' + st.key + '/products']"
+          > {{st.value}}
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+<div class="dropdown" (click)="reload()">
+  <label  style="color: white; font-size: 1.3rem; margin-right: 15px; ">Κατάστημα ανά κατηγορία </label>
 
   <div class="dropdown-content" >
 
   <a *ngFor="let store of stores.data"   [routerLink]="['/StoresByCategory/' + store.id]" >{{store.name}} </a>
 
-    <form class="form-inline mx-4 mx-lg-5 justifySearch">
 
-      <input
-        class="form-control mr-sm-2 searchBar"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-        placeholder="Αναζήτησε κατάστημα με βάση το όνομα"
-        #search
-      />
-      <div class="dropdown" >
-      <button
-        (click)="SearchStoresByName(search.value)"
-        class="btn btn-outline-danger my-2 my-sm-0 searchBtn"
-        type="submit"
-      >
-        🔎
-      </button>
-        <div class="dropdown-content" (click)="reload()">
-          <a
-            *ngFor="let store of storess.data"
-            [routerLink]="['/Store-item/' + store.key + '/products']"
-            > {{store.value}}
-          </a>
-        </div>
-      </div>
-    </form>
+  </div >
+</div>
 
-    <div class="dropdown" (click)="reload()">
-      <label
-        for="labelForstoreCategory"
-        style="color: white; font-size: 1.3rem; margin-right: 15px"
-      >
-        Κατάστημα ανά κατηγορία
-      </label>
-      <div class="dropdown-content">
-        <a
-          *ngFor="let store of stores.data"
-          [routerLink]="['/StoresByCategory/' + store.id]"
-          >{{ store.name }}
-        </a>
-      </div>
-    </div>
 
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLink="/Contact-us">
-        <a class="nav-link">Επικοινωνία</a>
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item"  routerLink="/Contact-us">
+        <a class="nav-link" >Επικοινωνία</a>
       </li>
     </ul>
-    <li routerLink="/Cart">
-      <a
-        class="btn btn-outline-danger btn-lg"
-        style="background-color: rgb(200, 23, 24)"
-      >
+    <li  routerLink="/Cart">
+      <a class="btn btn-outline-danger btn-lg" style="background-color: rgb(200, 23, 24)">
         <span class="glyphicon glyphicon-shopping-cart"></span> Καλάθι
       </a>
     </li>
     <div class="dropdown">
-      <button class="user dropbtn" routerLink="/User">
-        <img
-          class="userimg"
-          src="../../../../assets/images/userImages/account.jpg"
-        />
+      <button class="user dropbtn"  routerLink="/User">
+        <img class="userimg" src="../../../../assets/images/userImages/account.jpg" />
       </button>
       <div class="dropdown-content">
         <a href="#" routerLink="/User">Πληροφορίες Χρήστη</a>
       </div>
     </div>
   </div>
-  </nav>
-  
+</nav>
+
+
+
+

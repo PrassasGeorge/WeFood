@@ -9,7 +9,7 @@ export class NavbarComponent implements OnInit {
 
   stores:any;
   name!:string;
-  storess:any;
+  storesS:any;
 
   constructor( private storeService:StoreService) { }
 
@@ -29,7 +29,7 @@ searchStoresByCategory(){
 
 SearchStoresByName(searchText:any){
   this.storeService.GetStoresByName(searchText).subscribe({
-    next: (response: any) => this.storess = response,
+    next: (response: any) => this.storesS = response,
     error: (error: any) => console.log(error),
     complete: () => console.log("petuxe")
 })
