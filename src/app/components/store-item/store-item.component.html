@@ -1,10 +1,14 @@
 
+
+
+  <div class="color">
+
 <div class="container-" style="text-align: right; padding: 20px;">
   <div class="row" *ngIf="products">
 
     <h1>{{products.data.storeName}}</h1><br>
     <p>Τηλέφωνο: {{products.data.phoneNumber}}</p><br>
-  <p>Ηλεκτρονική Διεύθυνση: {{products.data.emailAddress}}</p><br>
+    <p>Ηλεκτρονική Διεύθυνση: {{products.data.emailAddress}}</p><br>
     <p> Διεύθυνση: {{products.data.address}}</p><br>
     <p>Πόλη: {{products.data.city}}</p>
   </div>
@@ -28,7 +32,7 @@
           <p class="card-text" style="text-align: left">{{ item.itemName }}</p>
         </div>
         <div class="card-text">
-          Description
+          {{item.value}}
           <p class="price" style="text-align: center">€{{ item.price }}</p>
         </div>
           <div class="card-footer">
@@ -39,4 +43,6 @@
   </div>
   </div>
 </div>
+  </div>
+
   </div>

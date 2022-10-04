@@ -91,3 +91,11 @@ color: #000;
 font-size: larger;
 text-decoration: underline;
 }
+
+.cardUserDetails{
+  background-color: white;
+  border: black solid;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: auto;
+}

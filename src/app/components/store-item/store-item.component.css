@@ -118,7 +118,10 @@ a {
   text-decoration: none;
   background-color: #1D3461;
   color: #fff;
+}
 
+.color{
+  background-color: rgb(250,219,219);
 }
 
 
