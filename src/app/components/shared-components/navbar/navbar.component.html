@@ -6,23 +6,26 @@
   </button>
 {{initiation()}}
   <div class="collapse navbar-collapse justifyEnd" id="navbarSupportedContent" *ngIf="loggedIn">
-    <form (ngSubmit)="SearchStoresByName(in.value)" class="form-inline mx-4 mx-lg-5 justifySearch">
-      <input #in id="search" class="form-control mr-sm-2 searchBar" type="search" placeholder="Search" aria-label="Search" placeholder="Αναζήτησε κατάστημα με βάση το όνομα" />
-      <button class="btn btn-outline-danger my-2 my-sm-0 searchBtn" type="submit" > 🔎</button>
-    </form>
-      <div class="">
-      <div class="dropdown" *ngIf="storesS">
-      <div class="dropdown-content" (click)="reload()">
+    <form  class="form-inline mx-4 mx-lg-5 justifySearch">
 
-          <a
-            *ngFor="let st of storesS.data"
-            [routerLink]="['/Store-item/' + st.key + '/products']"
-          > {{st.value}}
-          </a>
+      <input #search id="search" class="form-control mr-sm-2 searchBar" type="search" placeholder="Search" aria-label="Search" placeholder="Αναζήτησε κατάστημα με βάση το όνομα" />
+      <button (click)="SearchStoresByName(search.value)" class="btn btn-outline-danger my-2 my-sm-0 searchBtn" type="submit" > 🔎</button>
+
+      <div class="dropdown" (click)="reload()"  *ngIf="dropDown">
+        <label style="color:transparent" >Result</label>
+        <div class="dropdown-content" >
+          <a *ngFor="let st of dropDown.data" [routerLink]="['/Store-item/' + st.key + '/products']"> {{st.value}}</a>
 
         </div>
       </div>
-    </div>
+
+
+
+    </form>
+
+
+
+
 
 <div class="dropdown" (click)="reload()">
   <label  style="color: white; font-size: 1.3rem; margin-right: 15px; ">Κατάστημα ανά κατηγορία </label>
