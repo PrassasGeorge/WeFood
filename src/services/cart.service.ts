@@ -29,7 +29,7 @@ private baseUrl = environment.baseUrl+'/orders';
     queryParams= queryParams.set("id",id)
     .set("quantity",quantity);
 
-    let url = (this.baseUrl+"/addItem?id="+id+'&&quantity='+quantity);
+    let url = (this.baseUrl+"/addItem?id="+id.toString()+'&&quantity='+quantity);
 
     return this.http.patch(url,null)
   }
@@ -43,7 +43,7 @@ private baseUrl = environment.baseUrl+'/orders';
     queryParams= queryParams.set("id",id)
       .set("quantity",quantity);
 
-    let url = (this.baseUrl+"/addItem?id="+id+'&quantity='+quantity);
+    let url = (this.baseUrl+"/addItem?id="+id+'&&quantity='+quantity);
 
     return this.http.patch(url,null)
   }

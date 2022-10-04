@@ -46,17 +46,27 @@ export class CartComponent implements OnInit {
   }
 
   checkout(paymentMethod:string){
-
     this.cartService.checkout(paymentMethod).subscribe({
         next:(response:any) => {
           this.finalOrder = response;
-          alert("Η Παραγγελία σου ολοκληρώθηκε! Στην πόρτα σου σε 25 λεπτά ...");
         },
         error:(error:any)=> console.log(error),
         complete: ()=> {
           console.log("Order Created");
         }
       })
+  }
+
+  checkOrder(paymentMethod:string){
+    if (this.order.data.cost<1){
+      let id = this.order.data.store.id;
+      alert("Βάλε προίοντα στο καλαθι");
+      window.location.href="Store-item/"+id+"/products";
+    }
+
+    else{
+      this.checkout(paymentMethod);
+    }
   }
 
   clearCart(){
